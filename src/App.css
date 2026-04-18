@@ -143,7 +143,7 @@ section {
   top: 0;
   left: 0;
   z-index: -1;
-  background-image: url('/background-xl.png');
+  background-image: url("/background-xl.png");
   background-size: "cover";
   background-position: "center";
   background-repeat: no-repeat;
@@ -154,13 +154,13 @@ main:has(#section-2 .title:hover) #canvas-element:after {
   opacity: 0;
 }
 
-.images{
+.images {
   position: fixed;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  & img{
+  & img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -172,7 +172,9 @@ main:has(#section-2 .title:hover) #canvas-element:after {
   }
 }
 
-main:has(#section-2 .title[img-title="tomorrowland"]:hover) .images #tomorrowland {
+main:has(#section-2 .title[img-title="tomorrowland"]:hover)
+  .images
+  #tomorrowland {
   opacity: 1;
   background-color: rgb(18, 14, 48);
 }
@@ -182,7 +184,9 @@ main:has(#section-2 .title[img-title="navy-pier"]:hover) .images #navy-pier {
   background-color: rgb(18, 14, 48);
 }
 
-main:has(#section-2 .title[img-title="msi-chicago"]:hover) .images #msi-chicago {
+main:has(#section-2 .title[img-title="msi-chicago"]:hover)
+  .images
+  #msi-chicago {
   opacity: 1;
   background-color: rgb(20, 14, 62);
 }
@@ -207,68 +211,144 @@ main:has(#section-2 .title[img-title="opera"]:hover) .images #opera {
   background-color: rgb(176, 4, 4);
 }
 
-#section-3{
+#section-3 {
   padding-top: 10rem;
   padding-inline: 10rem;
   position: relative;
   z-index: 0;
   isolation: isolate;
   min-height: initial;
-  .top, .bottom{
+  .top {
     display: flex;
     width: 100%;
     gap: 10rem;
-}
-.left,.right{
-  width: 50%;
-}
-.top .left{
-  padding-left: 5rem;
-  h3{
-    font-size: 3rem;
-    font-weight: 100;
-    opacity: 0.6;
   }
-}
-.bottom .right{
-  display: flex;
-  position: relative;
-  z-index: 100;
-  p{
-    opacity: 0.5;
-    font-weight: 200;
-    font-size: 0.6rem;
+  .left,
+  .right {
+    width: 50%;
   }
-}
+  .top .left {
+    padding-left: 5rem;
+    h3 {
+      font-size: 2rem;
+      font-weight: 100;
+      opacity: 0.6;
+    }
+  }
 }
 
-#section-4{
+#section-4 {
   padding-inline: 10rem;
   min-height: 50vh;
-    .top, .bottom{
+  .top,
+  .bottom {
     display: flex;
     width: 100%;
     gap: 10rem;
-}
-.left,.right{
-  width: 50%;
-}
-.top .left{
-  padding-left: 5rem;
-  h3{
-    font-size: 3rem;
-    font-weight: 100;
-    opacity: 0.6;
+  }
+  .left,
+  .right {
+    width: 50%;
+  }
+  .top .left {
+    padding-left: 5rem;
+    h3 {
+      font-size: 3rem;
+      font-weight: 100;
+      opacity: 0.6;
+    }
+  }
+  .bottom .right {
+    display: flex;
+    gap: 3rem;
+    position: relative;
+    z-index: 100;
+    p {
+      opacity: 0.5;
+      font-weight: 200;
+      font-size: 0.9rem;
+    }
   }
 }
-.bottom .right{
-  display: flex;
-  position: relative;
-  z-index: 100;
-  p{
-    opacity: 0.5;
-    font-weight: 200;
-    font-size: 0.6rem;
+
+@media (max-width: 768px) {
+  #section-1 {
+    & nav {
+      gap: 4rem;
+    }
   }
-}
+  .first-line,
+  .second-line {
+    display: none;
+  }
+
+  #section-1 {
+    & nav {
+      .nav-element:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+
+  #section-1 {
+    & .middle {
+      gap: 0rem;
+      & .left {
+        & h1 {
+          font-family: "Heebo-Regular";
+          font-size: 4rem;
+        }
+      }
+    }
+    & .bottom {
+      gap: 0rem;
+      & .right {
+        & p {
+          font-size: 1rem;
+          font-weight: 100;
+        }
+      }
+    }
+  }
+
+  #section-2 {
+    & .titles {
+      & .title {
+        flex-direction: column;
+        & h1 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+  #section-3 {
+    .top .left {
+      padding-left: 0rem;
+    }
+  }
+  #section-4 {
+    .top,
+    .bottom {
+      gap: 0rem;
+    }
+  }
+  #section-3 {
+    padding-top: 0rem;
+    padding-inline: 3rem;
+    & .top {
+      gap: 0rem;
+    }
+    & .top .left {
+      h3 {
+        font-size: 2rem;
+      }
+    }
+  }
+  #section-4 {
+    padding-inline: 0rem;
+    .bottom .right {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  }
 }
